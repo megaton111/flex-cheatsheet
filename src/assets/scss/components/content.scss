@@ -1,0 +1,127 @@
+.content {
+  letter-spacing: -0.8px;
+  line-height: 1.8;
+  word-spacing: -3px;
+  h2 {
+    display: flex;
+    height: 50px;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+
+  .target {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #718093;
+  }
+
+  .desc {
+    font-size: 15px;
+    word-break: keep-all;
+    color: $clr-default;
+    & + .desc {
+      margin-top: 20px;
+    }
+    &.default {
+      font-size: 13px;
+      color: $clr-primary;
+    }
+    strong {
+      color: $clr-primary;
+      font-weight: 400;
+      // text-decoration: underline;
+      border-bottom: 1px solid $clr-primary;
+    }
+    .lst {
+      margin-bottom: 10px;
+      li {
+        display: flex;
+        list-style: none;
+        color: $clr-default;
+        span {
+          display: inline-flex;
+        }
+      }
+    }
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+      th,
+      td {
+        padding: 4px;
+        color: $clr-default;
+        border: 1px solid $clr-table-border-default;
+        font-size: 13px;
+      }
+      th {
+        width: 20%;
+        text-align: left;
+        strong {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  .controller {
+    padding: 40px 0;
+    > .btn {
+      margin-right: 10px;
+    }
+  }
+
+  .viewWrap {
+    display: flex;
+    flex-direction: column;
+    > div {
+      flex: 1;
+      box-sizing: border-box;
+      &.preview {
+        min-height: 300px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #dcdcdc;
+
+        .parent {
+          padding: 10px;
+          border: 2px solid $clr-default;
+        }
+
+        .child {
+          display: flex;
+          padding: 15px;
+          margin: 2px;
+          color: #fff;
+          text-align: center;
+          background-color: $clr-primary;
+          font-size: 17px;
+          justify-content: center;
+          align-items: center;
+        }
+        & + .desc {
+          margin-bottom: 20px;
+        }
+      }
+      &.code {
+        display: flex;
+        padding: 30px 10px;
+        border-radius: 5px;
+        background-color: #ddd;
+        pre {
+          font-size: 14px;
+          line-height: 2;
+          letter-spacing: 1px;
+        }
+      }
+      &.info {
+        margin-bottom: 20px;
+        font-size: 15px;
+        letter-spacing: -0.5px;
+        line-height: 1.7;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@import url("reset.scss");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "NanumGothic";
+  src: url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+AC00- U+D7A3;
+}
+
+body {
+  font-family: "Roboto Mono", "Nanum Gothic", monospace, sans-serif, arial;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-flex;
+  padding: 8px 18px;
+  border: 0;
+  background-color: $clr-primary-noactive;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  &.active {
+    background-color: $clr-primary;
+  }
+}
