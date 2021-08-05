@@ -47,6 +47,9 @@
 
   .table {
     width: 100%;
+    padding: 0;
+    border: 0;
+    border-spacing: 0px;
     border-collapse: collapse;
     tr {
       th,
@@ -55,6 +58,7 @@
         color: $clr-default;
         border: 1px solid $clr-table-border-default;
         font-size: 13px;
+        border-collapse: collapse;
       }
       th {
         width: 20%;
@@ -111,7 +115,7 @@
         border-radius: 5px;
         background-color: #ddd;
         pre {
-          font-size: 14px;
+          font-size: 12px;
           line-height: 2;
           letter-spacing: 1px;
         }

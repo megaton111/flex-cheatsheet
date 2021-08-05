@@ -56,7 +56,7 @@
 }
 .child {
   width : 250px ; 
-  height : 40%  ; 
+  height : 20%  ; 
 }
 </pre>
       </div>
@@ -105,7 +105,7 @@
     height:300px ; 
     .child {
       width : 250px ; 
-      height :40%  ; 
+      height :20%  ; 
     }
   }
 </style>

@@ -21,7 +21,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: "/intro", name : 'Intro', component: Intro } ,
+    { path: "/", name : 'Intro', component: Intro } ,
     { path: "/display", name : 'display', component: Display } ,
     { path: "/direction", name : 'flex-direction', component: Direction } ,
     { path: "/flexwrap", name : 'flex-wrap', component: FlexWrap } ,

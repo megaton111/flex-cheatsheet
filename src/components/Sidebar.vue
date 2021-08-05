@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <nav>
-      <router-link to="intro">Intro</router-link>
+      <router-link to="/">Intro</router-link>
       <h2>Container</h2>
       <router-link to="display">display</router-link>
       <router-link to="direction">flex-direction</router-link>
@@ -19,7 +19,7 @@
       <router-link to="alignself">align-self</router-link>
       <router-link to="flex">flex</router-link>
     </nav>
-    <div class="copyright">FLEX CHEATSHEET was created <br /><a href="#;">by KEUNHO LEE.</a></div>
+    <div class="copyright">FLEX CHEATSHEET was created <br /><a href="https://github.com/megaton111/flex-cheatsheet" target="_blank">by KEUNHO LEE.</a></div>
   </div>
 </template>
 
