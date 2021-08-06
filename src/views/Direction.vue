@@ -9,6 +9,10 @@
     </div>
     <div class="desc">
       <table class="table">
+        <colgroup>
+          <col style="width:250px" />
+          <col style="width:auto" />
+        </colgroup>
         <tr>
           <th>row <strong>기본값</strong></th>
           <td>수평으로 표시</td>

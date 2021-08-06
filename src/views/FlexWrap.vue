@@ -7,6 +7,10 @@
     <div class="desc">
 
       <table class="table">
+        <colgroup>
+          <col style="width:250px" />
+          <col style="width:auto" />
+        </colgroup>
         <tr>
           <th>nowrap <strong>기본값</strong></th>
           <td>한 줄로 표시, flex item들의 크기는 flex container에 들어갈 수 있는 크기로 축소됩니다.</td>
@@ -46,7 +50,8 @@
 <pre>
 .parent {
   display : flex ; 
-  height:300px ;
+  width : 500px ; 
+  height : 300px ;
   flex-wrap : {{ currentStyle }} ;
 }
 .child {
@@ -92,9 +97,10 @@
 <style lang="scss" scoped>
   .parent {
     display: flex; 
+    width : 500px ; 
     height:300px ; 
     .child {
-      width : 250px ; 
+      width : 200px ; 
     }
   }
 </style>

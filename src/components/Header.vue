@@ -1,6 +1,9 @@
 <template>
   <header id="header" class="header">
     <h1>{{ this.$store.state.title }}</h1>
+    <nav>
+      <router-link to="generator">Code Generator</router-link>
+    </nav>
   </header>
 </template>
 

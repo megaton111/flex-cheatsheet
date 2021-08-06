@@ -102,10 +102,10 @@
 <style lang="scss" scoped>
   .parent {
     display: flex; 
-    height:300px ; 
+    width : 500px ; 
+    height : 300px ; 
     .child {
-      width : 250px ; 
-      height :20%  ; 
+      width : 200px ; 
     }
   }
 </style>

@@ -14,6 +14,7 @@ import FlexShrink from '../views/FlexShrink';
 import FlexBasis from '../views/FlexBasis';
 import AlignSelf from '../views/AlignSelf';
 import Flex from '../views/Flex';
+import CodeGenerator from '../views/CodeGenerator';
 
 
 Vue.use(VueRouter);
@@ -35,6 +36,7 @@ const router = new VueRouter({
     { path: "/flexbasis", name : 'flex-basis', component: FlexBasis } ,
     { path: "/alignself", name : 'align-self', component: AlignSelf } ,
     { path: "/flex", name : 'flex', component: Flex } ,
+    { path: "/generator", name : 'Code Generator', component: CodeGenerator } ,
   ]
 });
 
