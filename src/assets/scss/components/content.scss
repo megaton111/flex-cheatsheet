@@ -111,13 +111,17 @@
       }
       &.code {
         display: flex;
-        padding: 30px 10px;
-        border-radius: 5px;
-        background-color: #ddd;
+
+        position: relative;
+        background-color: #f5f2f0;
+        border: 1px solid #e5e2e0;
+        padding: 20px;
+
         pre {
           font-size: 12px;
           line-height: 2;
-          letter-spacing: 1px;
+          letter-spacing: 0;
+          font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
         }
       }
       &.info {
@@ -134,13 +138,14 @@
   .makeView {
     display: flex;
     width: 100%;
+    margin-bottom: 10px;
+    border: 3px solid #718093;
 
     .flex-container {
       display: flex;
-      width: 40vw;
+      width: 100%;
       height: 30vh;
       padding: 2px;
-      border: 1px solid #333;
       overflow: auto;
       .flex-item {
         width: 100px;
@@ -150,24 +155,19 @@
         background-color: $clr-primary;
         color: #fff;
         cursor: pointer;
-        box-sizing: border-box;
-      }
-    }
-    .elementControl {
-      flex-basis: 150px;
-      padding-left: 5px;
-      flex-shrink: 0;
-      .btn {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 10px;
       }
     }
   }
+  .elementControl {
+    display: flex;
+    margin-bottom: 10px;
+    .btn {
+      margin-right: 10px;
+    }
+  }
   .makeController {
+    margin-bottom: 30px;
     dl {
-      dt {
-      }
       dd {
         display: flex;
         align-items: center;
@@ -184,5 +184,186 @@
         }
       }
     }
+    .alert {
+      display: inline-flex;
+      color: #ff4d4d;
+    }
   }
+}
+
+.wrapAlert {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  strong {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff4d4d;
+    color: #fff;
+    font-size: 14px;
+  }
+  .txtSelectItem {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: $clr-primary;
+    color: #fff;
+    font-size: 14px;
+  }
+}
+
+.btnControl {
+  display: flex;
+  width: 100%;
+  button {
+    flex-grow: 1;
+    height: 40px;
+    border: 1px solid $clr-primary;
+    border-radius: 0;
+    background-color: #fff;
+    color: $clr-primary;
+    cursor: pointer;
+    font-size: 13px;
+    &:not(:last-child) {
+      border-right: none;
+    }
+    &:active,
+    &.select {
+      background-color: $clr-primary;
+      color: #fff;
+    }
+  }
+}
+
+.bxControl {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  dt {
+    display: flex;
+    color: $clr-primary;
+    font-size: 12px;
+    font-weight: 700;
+    flex-basis: 140px;
+  }
+  dd {
+    display: flex;
+    width: 100%;
+    input[type="text"] {
+      flex: 1;
+      height: 40px;
+      margin-right: 10px;
+      border: 1px solid $clr-primary;
+      padding: 0 10px;
+    }
+    button {
+      flex-basis: 100px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 12px;
+      &.btnApply {
+        background-color: $clr-primary;
+        color: #fff;
+        font-size: 12px;
+        border: 0;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.codeView {
+  position: relative;
+  background-color: #f5f2f0;
+  border: 1px solid #e5e2e0;
+  padding: 20px;
+  pre {
+    letter-spacing: 0;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  }
+
+  .btnCopy {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    border: 1px solid $clr-primary;
+    color: $clr-primary;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-template-variable,
+.hljs-variable {
+  color: #ade5fc;
+}
+
+.hljs-bullet,
+.hljs-string {
+  color: #a2fca2;
+}
+
+.hljs-attribute,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-quote,
+.hljs-section,
+.hljs-title,
+.hljs-type {
+  color: #ffa;
+}
+
+.hljs-bullet,
+.hljs-number,
+.hljs-symbol {
+  color: #d36363;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-selector-tag {
+  color: #fcc28c;
+}
+
+.hljs-code,
+.hljs-comment,
+.hljs-deletion {
+  color: #888;
+}
+
+.hljs-link,
+.hljs-regexp {
+  color: #c6b4f0;
+}
+
+.hljs-meta {
+  color: #fc9b9b;
+}
+
+.hljs-deletion {
+  background-color: #fc9b9b;
+  color: #333;
+}
+
+.hljs-addition {
+  background-color: #a2fca2;
+  color: #333;
+}
+
+.hljs a {
+  color: inherit;
+}
+
+.hljs a:focus,
+.hljs a:hover {
+  color: inherit;
+  text-decoration: underline;
 }

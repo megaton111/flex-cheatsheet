@@ -1,6 +1,7 @@
 <template>
 <div>
   <div class="desc">
+    Flex 속성을 공부하기 위해 만든 사이트입니다. <br />
     Flexbox는 레이아웃을 좀 더 편하고 쉽게 설계할 수 있도록 제공해주는 새로운 Layout 스타일입니다. <br />
     사이즈가 동적으로 변하는 레이아웃일 때에도 유연하게 Layout을 설계할 수 있습니다. 
   </div>
