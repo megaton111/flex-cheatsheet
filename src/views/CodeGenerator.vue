@@ -59,31 +59,31 @@
         <div ref="codeWrap">
           <pre>
           .flex-container {
-                display: flex;
-                width: 100%;
-                height: 30vh;
-                padding: 2px;
-                overflow: auto;
-                flexDirection : {{ $store.state.direction }} , 
-                flexWrap : {{ $store.state.wrap }} , 
-                justifyContent : {{ $store.state.justifyContent }} , 
-                alignItems : {{ $store.state.alignItems }} ,
-                alignContent : {{ $store.state.alignContent }} 
+            display: flex;
+            width: 100%;
+            height: 30vh;
+            padding: 2px;
+            overflow: auto;
+            flexDirection : {{ $store.state.direction }} , 
+            flexWrap : {{ $store.state.wrap }} , 
+            justifyContent : {{ $store.state.justifyContent }} , 
+            alignItems : {{ $store.state.alignItems }} ,
+            alignContent : {{ $store.state.alignContent }} 
           }
           </pre>
           <pre v-for="( item, idx ) in $store.state.items" :key="idx">
           .flex-item:nth-child({{idx+1}}) {
-                width : 100px ;
-                height : 100px ;
-                margin : 2px ;
-                padding : 10px ;
-                background-color : #0366d6 ;
-                color : #fff ;
-                order : {{ item.order }} ; 
-                flex-grow : {{ item.grow }} ;
-                flex-shrink : {{ item.shrink }} ;
-                flex-basis : {{ item.basis == 'auto' ? item.basis : item.basis + 'px' }} ;
-                align-self : {{ item.alignSelf }} ;
+            width : 100px ;
+            height : 100px ;
+            margin : 2px ;
+            padding : 10px ;
+            background-color : #0366d6 ;
+            color : #fff ;
+            order : {{ item.order }} ; 
+            flex-grow : {{ item.grow }} ;
+            flex-shrink : {{ item.shrink }} ;
+            flex-basis : {{ item.basis == 'auto' ? item.basis : item.basis + 'px' }} ;
+            align-self : {{ item.alignSelf }} ;
           }
           </pre>
         </div>
@@ -91,6 +91,14 @@
 
 
     </div>
+
+    <SnackBar />
+    <!-- <SnackBar :message="message" :chkSnackBar="chkSnackBar" /> -->
+    <!-- <SnackBar message="선택되었습니다!" :chk="chkSelect" /> -->
+
+    <!-- <transition name="fade">
+      <div class="snackBar" v-show="showBar">{{ message }}</div>
+    </transition> -->
 
   </div>
 </template>
@@ -102,6 +110,7 @@
   import ControllerTypeButton from '../components/ControllerTypeButton.vue' ;
   import ControllerTypeInput from '../components/ControllerTypeInput.vue' ;
   import ControllerTypeButtonItems from '../components/ControllerTypeButtonItems.vue' ;
+  import SnackBar from '../components/SnackBar.vue' ;
 
   export default {
     name : 'CodeGenerator' , 
@@ -110,14 +119,33 @@
       Button ,
       ControllerTypeButton ,
       ControllerTypeInput ,
-      ControllerTypeButtonItems
+      ControllerTypeButtonItems ,
+      SnackBar
     } , 
     data(){
       return {
+        showBar : false ,
+        chkCopy : false , 
+        chkSelect : false , 
+        chkSnackBar : false ,
+        message : '' ,
       }
     } ,
     methods : {
-      selectedItem ( idx ) { this.$store.commit( 'selectedItem', idx ) ; } ,
+      selectedItem ( idx ) { 
+        this.$store.commit( 'selectedItem', idx ) ; 
+      } ,
+      copyCode(){
+        let data = this.$refs.codeWrap.textContent ; 
+        let textarea = document.createElement('textarea'); 
+        textarea.value = data; 
+        document.body.appendChild(textarea); 
+        textarea.select(); 
+        textarea.setSelectionRange(0, 9999); 
+        document.execCommand('copy'); 
+        document.body.removeChild(textarea);
+        this.$store.commit( 'showSnackBar', '코드를 복사했습니다' )  ;
+      } ,
     } ,
   }
 

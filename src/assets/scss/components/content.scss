@@ -288,6 +288,7 @@
   border: 1px solid #e5e2e0;
   padding: 20px;
   pre {
+    white-space: pre-line;
     letter-spacing: 0;
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   }
@@ -302,4 +303,22 @@
     background-color: transparent;
     cursor: pointer;
   }
+}
+
+.snackBar {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  padding: 10px 50px;
+  background-color: #ff4d4d;
+  color: #fff;
+  font-weight: 700;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

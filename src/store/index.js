@@ -31,15 +31,17 @@ export default new Vuex.Store({
     wrap : 'nowrap' , 
     justifyContent : 'flex-start',
     alignItems : 'stretch' , 
-    alignContent : 'stretch' ,
+    alignContent: 'stretch',
+    snackBarChk: false,
+    snackBarMessage : '' , 
   },
   getters: {  // 데이터를 가져오기만 할 수 있고 변경은 못한다.
     getTitle: state => state.title ,
   },
   mutations: {
     add : state => {
-      console.log('add'); 
-      state.items.push({ order : 0, self : 'auto' }) ;
+      console.log('add');
+      state.items.push({ order : 0, alignSelf : 'auto', grow : '0', shrink : '1', basis : 'auto' }) ;
     },
     delete: state => {
       console.log('delete');
@@ -52,7 +54,7 @@ export default new Vuex.Store({
     selectedItem : ( state , idx ) => {
       console.log('selectedItem :', idx, state);
       if( idx == state.currentItem ) {
-        state.currentItem = null ;
+        state.currentItem = null;
       } else {
         state.currentItem = idx ; 
         state.order = '' ; 
@@ -76,7 +78,7 @@ export default new Vuex.Store({
     setStyleItem: (state, payload) => {
       console.log(state, payload);
       if( state.currentItem == null ) {
-        state.alert = '적용할 아이템이 선택되지 않았습니다.' ;
+        state.alert = '적용할 아이템이 선택되지 않았습니다.';
       } else {
         state.items[state.currentItem][ payload.style ] = payload.value ; 
       }
@@ -85,7 +87,15 @@ export default new Vuex.Store({
     setStyleContainer: (state, payload) => {
       console.log('setStyleContainer in', state, payload);
       state[payload.style] = payload.value ; 
-    }
+    },
+    showSnackBar: (state, msg) => {
+      console.log('msg :', msg, state);
+      state.snackBarChk = !state.snackBarChk;
+      state.snackBarMessage = msg;
+      setTimeout(() => {
+        state.snackBarChk = !state.snackBarChk ;
+      }, 1000 ) ;
+    } ,
   },
   actions: {
     addCounter : context => context.commit( 'increment' ) ,
